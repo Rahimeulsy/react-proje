@@ -3,11 +3,12 @@ import { useState } from "react";
 function List({ contacts }) {
   const [filterText, setFilterText] = useState("");
 
-  const filtered= contacts.filter((item)=>{
-    return Object.keys(item).some((key)=>
+  const filtered = contacts.filter((item) => {
+    return Object.keys(item).some((key) =>
       item[key]
-      .toString()
-      .toLowerCase().includes(filterText.toLocaleLowerCase())
+        .toString()
+        .toLowerCase() //bir string (metin) içerisindeki tüm harfleri küçük harfe dönüştürür
+        .includes(filterText.toLocaleLowerCase())
     );
   });
 
@@ -20,10 +21,13 @@ function List({ contacts }) {
       />
       <ul className="list">
         {filtered.map((contact, i) => (
-          <li key={i}>{contact.fullname}</li>
+          <li key={i}>
+            <span>{contact.fullname}</span>
+            <span>{contact.phone_number}</span>
+          </li>
         ))}
       </ul>
-    </div>
+      <p> Total contacts <b /> ({filtered.length}) </p> </div> //toplam veriyi sayar
   );
 }
 
