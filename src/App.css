@@ -1,0 +1,78 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+#container1{
+  width: 400px;
+  background-color: aliceblue;
+  padding: 20px;
+}
+input{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50; /* Butonun arka plan rengi */
+  color: white; /* Butonun yazı rengi */
+  padding: 0px 20px; /* Butonun iç boşlukları (üst-alt, sağ-sol) */
+  border: none; /* Kenarları kaldırma */
+  border-radius: 8px; /* Kenarları yuvarlama */
+  font-size: 12px; /* Yazı boyutu */
+  cursor: pointer; /* Mouse üzerine geldiğinde pointer işareti */
+  width: 60px; /* Buton genişliği */
+  height: 40px; /* Buton yüksekliği */
+  
+}
+
+button:hover {
+  background-color: #45a049; /* Hover durumunda arka plan rengi */
+  transform: scale(1.05); /* Buton hoverda hafif büyütme efekti */
+  
+}
+
+button:active {
+  background-color: #3e8e41; /* Tıklama durumunda arka plan rengi */
+  transform: scale(0.98); /* Tıklama anında hafif küçültme */
+  
+}
+ul.list {
+  list-style-type: none; /* Madde işaretlerini kaldır */
+  padding: 0; /* Varsayılan padding'i sıfırla */
+  margin: 0; /* Varsayılan margin'i sıfırla */
+  width: 300px; /* Listenin genişliğini belirle */
+  background-color: #f9f9f9; /* Liste arka plan rengi */
+  border: 1px solid #ddd; /* Listeye kenarlık ekle */
+  border-radius: 8px; /* Kenarları yuvarla */
+  
+}
+
+ul.list li {
+  padding: 10px; /* Liste öğesine iç boşluk ekle */
+  border-bottom: 1px solid #ddd; /* Her bir liste öğesine alt kenarlık ekle */
+  font-size: 14px; /* Yazı boyutunu ayarla */
+  color: #333; /* Yazı rengini belirle */
+}
+
+ul.list li:last-child {
+  border-bottom: none; /* Son liste öğesinin alt kenarlığını kaldır */
+}
+.container {
+  display: grid;
+  place-items: center; /* Yatay ve dikey ortalama */
+  height: 50vh;
+}
+
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
