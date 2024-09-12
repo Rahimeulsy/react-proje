@@ -3,7 +3,7 @@ import "../../../App.css";
 
 const initialFormValues = { fullname: "", phone_number: "" };
 
-function Form({ addContact, contacts }) {
+function Form({ addContact, contacts, clearContacts }) {
   const [form, setForm] = useState(initialFormValues);
 
   useEffect(() => {
@@ -22,6 +22,7 @@ function Form({ addContact, contacts }) {
     }
 
     addContact([...contacts, form]);
+     setForm({ fullname: "", phone_number: "" });
   };
 
   return (
@@ -46,6 +47,7 @@ function Form({ addContact, contacts }) {
       <br></br>
       <div className="bttn">
         <button onClick={onSubmit}>Add</button>
+        <button type="button" onClick={clearContacts}>Del</button>
       </div>
     </form>
   );

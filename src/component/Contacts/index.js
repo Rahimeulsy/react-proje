@@ -17,6 +17,9 @@ function Contacts() {
       phone_number: "789785",
     },
   ]);
+  const clearContacts = () => {
+    setContacts(contacts.slice(0, -1));
+  };
 
   useEffect(() => {
     console.log(contacts);
@@ -26,7 +29,7 @@ function Contacts() {
     <div id="container">
       <h1>Contacts</h1>
       <List contacts={contacts} />
-      <Form addContact={setContacts} contacts={contacts} />
+      <Form addContact={setContacts} contacts={contacts} clearContacts={clearContacts} />
     </div>
   );
 }

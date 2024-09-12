@@ -8,6 +8,8 @@
   width: 400px;
   background-color: rgb(194, 255, 175);
   padding: 20px;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
 }
 input{
   width: 100%;
@@ -15,11 +17,13 @@ input{
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
 }
 
 button {
   
-  background-color: #52e644; /* Butonun arka plan rengi */
+  background-color: #018d0d; /* Butonun arka plan rengi */
   color: white; /* Butonun yazı rengi */
   padding: 0px 20px; /* Butonun iç boşlukları (üst-alt, sağ-sol) */
   border: none; /* Kenarları kaldırma */
@@ -28,15 +32,15 @@ button {
   cursor: pointer; /* Mouse üzerine geldiğinde pointer işareti */
   width: 60px; /* Buton genişliği */
   height: 40px; /* Buton yüksekliği */
- 
 }
 bttn{
   
-  float: right;
+  display: flex;
+  gap: 100px; /* Butonlar arasına 10px boşluk bırakır */
 }
 
 button:hover {
-  background-color: #018d0d; /* Hover durumunda arka plan rengi */
+  background-color: #71e767; /* Hover durumunda arka plan rengi */
   transform: scale(1.05); /* Buton hoverda hafif büyütme efekti */
   
 }
@@ -53,9 +57,14 @@ ul.list {
   width: 300px; /* Listenin genişliğini belirle */
   background-color: #f9f9f9; /* Liste arka plan rengi */
   border: 1px solid #ddd; /* Listeye kenarlık ekle */
-  border-radius: 8px; /* Kenarları yuvarla */
+  overflow-y: auto;
+  max-height: 150px;
+  scrollbar-width: thin; /* Scrollbar genişliği (Mozilla) */
+  scrollbar-color: #4CAF50 #f1f1f1; /* Scrollbar renkleri (Mozilla) */
   
 }
+  
+
 
 ul.list li {
   background-color: rgb(98, 243, 98);
@@ -66,11 +75,11 @@ ul.list li {
   margin-bottom: 2px;
   display: flex;
   justify-content: space-between;
+  border: 2px solid #4CAF50;
+  
 }
 
-ul.list li:last-child {
-  border-bottom: none; /* Son liste öğesinin alt kenarlığını kaldır */
-}
+
 .container {
   display: grid;
   place-items: center; /* Yatay ve dikey ortalama */

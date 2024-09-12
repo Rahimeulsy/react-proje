@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useEffect, useRef } from "react";
+import "../../../App.css";
 
 function List({ contacts }) {
   const [filterText, setFilterText] = useState("");
@@ -12,7 +14,17 @@ function List({ contacts }) {
     );
   });
 
+  const listRef = useRef(null);
+  useEffect(() => {
+    // Yeni bir isim eklendikçe listeyi en alta kaydır
+    if (listRef.current) {
+      listRef.current.scrollTop = listRef.current.scrollHeight;
+    }
+  }, [contacts]);
+  
   return (
+
+    
     <div className="container">
       <input
         placeholder="Filter contact"
@@ -26,8 +38,14 @@ function List({ contacts }) {
             <span>{contact.phone_number}</span>
           </li>
         ))}
+
+
       </ul>
-      <p> Total contacts <b /> ({filtered.length}) </p> </div> //toplam veriyi sayar
+      <p>
+        {" "}
+        Total contacts <b /> ({filtered.length}){" "}
+      </p>{" "}
+    </div> //toplam veriyi sayar
   );
 }
 
