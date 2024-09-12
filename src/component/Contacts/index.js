@@ -29,7 +29,11 @@ function Contacts() {
     <div id="container">
       <h1>Contacts</h1>
       <List contacts={contacts} />
-      <Form addContact={setContacts} contacts={contacts} clearContacts={clearContacts} />
+      <Form
+        addContact={setContacts}
+        contacts={contacts}
+        clearContacts={clearContacts}
+      />
     </div>
   );
 }

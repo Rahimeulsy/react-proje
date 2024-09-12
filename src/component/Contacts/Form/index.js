@@ -11,7 +11,7 @@ function Form({ addContact, contacts, clearContacts }) {
   }, [contacts]);
 
   const onChangeInput = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value }); 
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
@@ -22,7 +22,7 @@ function Form({ addContact, contacts, clearContacts }) {
     }
 
     addContact([...contacts, form]);
-     setForm({ fullname: "", phone_number: "" });
+    setForm({ fullname: "", phone_number: "" });
   };
 
   return (
@@ -47,7 +47,9 @@ function Form({ addContact, contacts, clearContacts }) {
       <br></br>
       <div className="bttn">
         <button onClick={onSubmit}>Add</button>
-        <button type="button" onClick={clearContacts}>Del</button>
+        <button type="button" onClick={clearContacts}>
+          Del
+        </button>
       </div>
     </form>
   );

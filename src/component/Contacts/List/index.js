@@ -21,10 +21,8 @@ function List({ contacts }) {
       listRef.current.scrollTop = listRef.current.scrollHeight;
     }
   }, [contacts]);
-  
-  return (
 
-    
+  return (
     <div className="container">
       <input
         placeholder="Filter contact"
@@ -38,8 +36,6 @@ function List({ contacts }) {
             <span>{contact.phone_number}</span>
           </li>
         ))}
-
-
       </ul>
       <p>
         {" "}
